@@ -20,7 +20,7 @@ $filt = uniqueCategory($categories);
           <!-- Navbar Collapse -->
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" id="homeDropdownMenuLink" href="index.html" data-bs-target="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" id="homeDropdownMenuLink" href="http://localhost/project-test/login/index.php" data-bs-target="http://localhost/project-test/login/index.php"  aria-haspopup="true" aria-expanded="false">
                   Home   </a>
                 <div class="dropdown-menu dropdown-menu-animated" aria-labelledby="homeDropdownMenuLink"><a class="dropdown-item" href="index5.html">Slider + broken grid <span class="badge badge-info-light ms-1">New</span>    </a><a class="dropdown-item" href="index.html">Fullscreen home + Lookbook</a><a class="dropdown-item" href="index2.html">Split-screen home</a><a class="dropdown-item" href="index3.html">Classic home</a><a class="dropdown-item" href="index4.html">Parallax sections <span class="badge badge-info-light ms-1">New</span></a></div>
               </li>
