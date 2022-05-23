@@ -1,6 +1,8 @@
 <?php
 include('../admin_cp/init.php');
-include_once('../includes/templates/navbar.php');
+// include_once('../includes/templates/navbar.php');
+include_once('nav.php');
+
 ?>
 
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -85,6 +87,7 @@ include_once('../includes/templates/navbar.php');
 </div>
 
 <?php
-include_once('../includes/templates/footer.php');
+// include_once('../includes/templates/footer.php');
+include_once('footer.php');
 
 ?>
