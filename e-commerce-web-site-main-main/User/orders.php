@@ -22,7 +22,7 @@ include_once('../includes/templates/navbar.php');
         </div>
         <div class="col-md-9 table-responsive-sm" id="user_orders_table">
             <?php
-            $_SESSION['id']=35;
+            // $_SESSION['id']=35;
             // if (isset($_SESSION['id'])) {
                 try {
 

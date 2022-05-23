@@ -24,6 +24,7 @@ include_once('../includes/templates/navbar.php');
         <div class="col-md-9 table-responsive-sm" id="user_orders_table">
             <?php
             try {
+                
                 $id = $_GET['order-id'];
 
                 $query1 = "SELECT * FROM cart WHERE order_id = :id";

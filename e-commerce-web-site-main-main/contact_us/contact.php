@@ -1,7 +1,6 @@
 <?php
 include('../admin_cp/init.php');
 include_once('../includes/templates/navbar.php');
-
 ?>
 
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -45,6 +44,20 @@ include_once('../includes/templates/navbar.php');
                 </form>
                 <?php
                 if (isset($_POST['submit-btn'])) {
+                    $fname=$_POST['fname'];
+                    $lname=$_POST['lname'];
+                    $mail=$_POST['email'];
+                    $msg=$_POST['message'];
+
+                    $sql=('INSERT INTO messages (first_name, last_name, email, message) VALUES (:fname, :lname, :mail, :msg)');
+                    $statment=$db->prepare($sql);
+                    $statment->bindValue(':fname', $fname);
+                    $statment->bindValue(':lname', $lname);
+                    $statment->bindValue(':mail', $mail);
+                    $statment->bindValue(':msg', $msg);
+
+                    $statment->execute();
+
                     echo ('<h6 style="color: #9fec51;">Message sent successfully</h6>');
                 }
                 ?>

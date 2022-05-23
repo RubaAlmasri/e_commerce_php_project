@@ -31,7 +31,7 @@ include_once('../includes/templates/navbar.php');
             // if (isset($_SESSION['id'])) {
 
             try {
-                $id = $_SESSION['id'] ?? 35;
+                $id = $_SESSION['id'];
                 $query1 = "SELECT user_name, user_email, user_mobile, user_location, user_image FROM users WHERE user_id = :ID";
                 $result = $db->prepare($query1);
                 $result->bindParam(':ID', $id);
