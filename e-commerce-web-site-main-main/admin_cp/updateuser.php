@@ -12,7 +12,7 @@ require_once('init.php');
 $id=$_GET['id']??null;
 
 if(!$id){
-    headear('Location: user.php');
+    header('Location: user.php');
 
 exit;}
 
@@ -169,4 +169,4 @@ echo '<img src="'.$products['user_image'].'"class="update">';}
 
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+

@@ -38,17 +38,23 @@ echo '<div class="searchbox">
 </form></div>';
 
 
-
+$statement =$db->prepare('SELECT  * FROM categories  INNER JOIN products ON product_category_id = category_id');
+$statement->execute();
+$products= $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 #table
+
+
 echo'<div class="tablecatbox"><div class="tablecat">  <table class="table table-striped">
+<h1 style="color:#010038">Products</h1>
 <div class="table-responsive">
 <thead>
   <tr>
     <th scope="col" >Id</th>
     <th scope="col" >Name</th>
     <th scope="col">Image</th>
+    <th scope="col">Category</th>
     <th scope="col">Description</th>
     <th scope="col">Price</th>
     <th scope="col"></th>
@@ -61,14 +67,18 @@ foreach($products as $i){
            <th scope="row">'.$i['product_id'].'</th>
             
             <td>'.$i['product_name'].'</td>
-            <td><img class="catadd" src="'.$i['product_main_image'].'"></td>   
+            <td><img class="catadd" src="'.$i['product_main_image'].'"></td>  
+            
+            <td>'.$i['category_name'].'</td>
+
+
             <td>'.$i['product_description'].'</td>
             <td>'.$i['product_price'].'JD</td>       
-            <td><a href="updateproduct.php?id='.$i['product_id'].'" type="button" class="btn btn-primary">edit</a></td>
+            <td><a href="updateproduct.php?id='.$i['product_id'].'" type="button" class="btn btn-primary">Edit</a></td>
             <td>
            <form method="post" action="deleteproduct.php">
            <input type="hidden" name="id" value="'.$i['product_id'].'">
-            <button type="submit" class="btn btn-danger">delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
             </form>
             </td>
           </tr>
@@ -83,6 +93,6 @@ foreach($products as $i){
 ?>
 
 
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 

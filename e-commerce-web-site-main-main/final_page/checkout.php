@@ -1,8 +1,10 @@
 <?php
-session_start();
-require("../admin_cp/init.php");
-include('../includes/templates/navbar.php');
-$_SESSION['order_id'] = 59;
+
+// require("../admin_cp/init.php");
+// include('../includes/templates/navbar.php');
+include_once('../new/header.php');
+
+// $_SESSION['order_id'] = 59;
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +16,7 @@ $_SESSION['order_id'] = 59;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -38,7 +40,7 @@ $_SESSION['order_id'] = 59;
         }
     }
     ?>
-    <div class="container">
+    <div class="container" style="padding-bottom:10%;padding-top:5% ; font-weight: bold;">
         <div class="row mt-3">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -49,7 +51,6 @@ $_SESSION['order_id'] = 59;
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (JOD)</span>
                         <strong><?php if($_SESSION['discount_total']){
-
                         echo $_SESSION['discount_total'];}
                         else{
                             echo $_SESSION['total'];
@@ -59,8 +60,8 @@ $_SESSION['order_id'] = 59;
                 </ul>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Billing address</h4>
-                <form class="needs-validation" method="POST" action='http://localhost/project-test/final_page/thank-you.php'>
+                <h3 class="mb-3">Billing address</h3>
+                <form class="needs-validation" method="POST" action='./thank-you.php'>
                     <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">User name</label>
@@ -77,7 +78,7 @@ $_SESSION['order_id'] = 59;
                         <input type="text" class="form-control" id="phonenum" name="phone" placeholder="07777777" value="<?php echo  $data[0]['order_mobile'] ?>">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="state">State</label>
+                        <label for="state">City</label>
                         <select class="custom-select d-block w-100" name="state" id="state">
                             <option value="">Choose...</option>
                             <option value="1">Amman</option>
@@ -97,7 +98,7 @@ $_SESSION['order_id'] = 59;
             </div>
 
             <hr class="mb-4">
-            <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#537EC5 ;color:white;">Continue to checkout</button>
+            <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#e15a53; ;color:white;">Continue to checkout</button>
             </form>
         </div>
     </div>
@@ -133,4 +134,4 @@ $_SESSION['order_id'] = 59;
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <?php include('../includes/templates/footer.php') ?>
+  <?php  include_once '../new/footer.php';?>

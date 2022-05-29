@@ -1,9 +1,8 @@
 <?php
-session_start();
-include('../admin_cp/init.php');
-include_once('../includes/templates/navbar.php');
 
+// include_once('../includes/templates/navbar.php');
 
+include_once('../new/header.php');
 // $_SESSION['user_name']='ruba';
 
 ?>
@@ -18,9 +17,9 @@ include_once('../includes/templates/navbar.php');
 
 <div class="container user_container" style="margin-bottom: 5%;">
     <div class="row align-items-stretch no-gutters contact-wrap">
-        <div class="col-md-3 sidebar_div">
-            <img src="<?php echo $_SESSION['user_image']?>" class="rounded-circle" alt="Profile" width="100" height="100">
-            <h6 style="color: white;"><i class="fas fa-user-alt user_icons" style="color: #293A80;"></i><?php echo isset($_SESSION['username']) ? $_SESSION['username']: 'unknown'?></h6>
+        <div class="col-md-3 sidebar_div" style="background-color: #e15a53;">
+            <img src="images/pic.jpg" class="rounded-circle" alt="Profile" width="100" height="100">
+            <h3 style="color: white;"><?php echo $_SESSION['username'] ?></h3>
             <br><br>
             <a href="info.php" class="user_acc_links"><i class="fas fa-user-alt user_icons"></i> Info</a><br><br>
             <a href="orders.php" class="user_acc_links"><i class="fas fa-shopping-basket user_icons"></i> Orders</a><br><br>
@@ -69,7 +68,7 @@ include_once('../includes/templates/navbar.php');
                             </div>
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <input type="submit" value="Edit" name="edit-btn" class="btn rounded-3 py-2 px-4">
+                                    <input type="submit" value="Edit" name="edit-btn" class="btn rounded-3 py-2 px-4" style=" background-color: #e15a53 ; color:white">
                                 </div>
                             </div>
                         </form>
@@ -89,6 +88,6 @@ include_once('../includes/templates/navbar.php');
     </div>
 </div>
 <?php
-include_once('../includes/templates/footer.php');
+include_once('../new/footer.php');
 
 ?>
